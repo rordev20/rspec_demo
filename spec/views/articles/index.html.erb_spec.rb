@@ -10,5 +10,6 @@ RSpec.describe "articles/index", type: :view do
 
   it "renders a list of articles" do
     render
+    render :template => "articles/index.html.erb"
   end
 end
