@@ -11,14 +11,12 @@ RSpec.describe "Articles", type: :request do
   it "Create a article and redirect to index page" do
     get "/articles/new"
     expect(response).to render_template('new')
-    #post "/articles", :article => {:title => "My new article"}
-
     post '/articles', params: { article: { title: 'My new article' }}
 
 
-    expect(response).to redirect_to(articles_path)
+    #expect(response).to redirect_to(articles_path)
     follow_redirect!
-    expect(response).to render_template('index')
+    expect(response).to render_template('show')
     expect(response.body).to include('Article was successfully created.')
   end
 end

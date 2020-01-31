@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "articles/edit", type: :view do
   before(:each) do
-    @article = assign(:article, Article.create!())
+    @article = assign(:article, Article.create!(title: "test title"))
   end
 
   it "renders the edit article form" do

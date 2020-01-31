@@ -9,6 +9,5 @@ RSpec.feature "Creating Articles", :type => :feature do
     fill_in "article_body", :with => "This is my first Article"
     click_button "Create Article"
     expect(page).to have_text("Article was successfully created.")
-    expect(page.current_path).to eq(articles_path)
   end
 end
